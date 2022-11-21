@@ -1,13 +1,15 @@
 {
     "name": "mrwatts.utility.runtime",
     "rootNamespace": "",
-    "references": [],
+    "references": [
+        "GUID:244e93cef8f1fb231ad44a93c4497b7d"
+    ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
-    "overrideReferences": false,
+    "overrideReferences": true,
     "precompiledReferences": [],
-    "autoReferenced": true,
+    "autoReferenced": false,
     "defineConstraints": [],
     "versionDefines": [],
     "noEngineReferences": false

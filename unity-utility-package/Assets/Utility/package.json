@@ -16,6 +16,6 @@
     "url": "https://www.mrwatts.io"
   },
   "publishConfig": {
-    "registry": ""
+    "registry": "https://gitlab.com/api/v4/projects/27157125/packages/npm/"
   }
 }

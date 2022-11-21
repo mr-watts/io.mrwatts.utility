@@ -1,5 +1,5 @@
 variables:
-    UNITY_PACKAGE_PATH: "unity-onion/Assets/Onion/"
+    UNITY_PACKAGE_PATH: "unity-onion/Assets/Utility/"
     NPM_REGISTRY_PATH: "//gitlab.com/api/v4/projects/27157125/packages/npm/"
 
 build-snapshot:
