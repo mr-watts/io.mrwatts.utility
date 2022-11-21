@@ -155,6 +155,20 @@
       },
       "url": "https://packages.unity.com"
     },
+    "io.mrwatts.codeanalysisrulesets": {
+      "version": "2.2.9",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://gitlab.com/api/v4/projects/27157125/packages/npm"
+    },
+    "io.mrwatts.fuelinject": {
+      "version": "0.3.1",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://gitlab.com/api/v4/projects/27157125/packages/npm"
+    },
     "com.unity.modules.ai": {
       "version": "1.0.0",
       "depth": 0,
