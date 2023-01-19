@@ -1,6 +1,6 @@
 {
   "name": "io.mrwatts.utility",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "displayName": "Utility Package",
   "description": "This package contains various scripts and components that are often reused in multiple projects, but don't belong in a specific package.",
   "unity": "2021.3",
