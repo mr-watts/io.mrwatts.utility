@@ -2,9 +2,9 @@
 
 namespace MrWatts.Internal.Utilities
 {
-    internal static class TransformExtensions
+    public static class TransformExtensions
     {
-        internal static void ClearChildren(this Transform t)
+        public static void ClearChildren(this Transform t)
         {
             foreach (Transform child in t)
             {
