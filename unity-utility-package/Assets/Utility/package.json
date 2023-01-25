@@ -1,21 +1,21 @@
 {
-  "name": "io.mrwatts.utility",
-  "version": "0.1.0",
-  "displayName": "Utility Package",
-  "description": "This package contains various scripts and components that are often reused in multiple projects, but don't belong in a specific package.",
-  "unity": "2021.3",
-  "keywords": [
-    "Utility",
-    "Utilities",
-    "Tools",
-    "Helper"
-  ],
-  "author": {
-    "name": "Mr. Watts",
-    "email": "hello@mrwatts.io",
-    "url": "https://www.mrwatts.io"
-  },
-  "publishConfig": {
-    "registry": "https://gitlab.com/api/v4/projects/27157125/packages/npm/"
-  }
+    "name": "io.mrwatts.utility",
+    "version": "0.1.1",
+    "displayName": "Utility Package",
+    "description": "This package contains various scripts and components that are often reused in multiple projects, but don't belong in a specific package.",
+    "unity": "2021.3",
+    "keywords": [
+      "Utility",
+      "Utilities",
+      "Tools",
+      "Helper"
+    ],
+    "author": {
+      "name": "Mr. Watts",
+      "email": "hello@mrwatts.io",
+      "url": "https://www.mrwatts.io"
+    },
+    "publishConfig": {
+      "registry": "https://gitlab.com/api/v4/projects/27157125/packages/npm/"
+    }
 }
