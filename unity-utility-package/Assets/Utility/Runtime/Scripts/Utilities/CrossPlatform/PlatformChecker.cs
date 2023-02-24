@@ -25,28 +25,34 @@ namespace MrWatts.CommScope.EnclosureVisualizer
                 {
                     currentPlatform |= Platform.WindowsDesktop;
                 }
-                else if (PlayerSettings.WSA.GetTargetDeviceFamily(PlayerSettings.WSATargetFamily.Mobile))
+
+                if (PlayerSettings.WSA.GetTargetDeviceFamily(PlayerSettings.WSATargetFamily.Mobile))
                 {
                     currentPlatform |= Platform.WindowsPhone;
                     currentPlatform |= Platform.WindowsTablet;
                 }
-                else if (PlayerSettings.WSA.GetTargetDeviceFamily(PlayerSettings.WSATargetFamily.Xbox))
+
+                if (PlayerSettings.WSA.GetTargetDeviceFamily(PlayerSettings.WSATargetFamily.Xbox))
                 {
                     currentPlatform |= Platform.WindowsXbox;
                 }
-                else if (PlayerSettings.WSA.GetTargetDeviceFamily(PlayerSettings.WSATargetFamily.Holographic))
+
+                if (PlayerSettings.WSA.GetTargetDeviceFamily(PlayerSettings.WSATargetFamily.Holographic))
                 {
                     currentPlatform |= Platform.HoloLens2;
                 }
-                else if (PlayerSettings.WSA.GetTargetDeviceFamily(PlayerSettings.WSATargetFamily.Team))
+
+                if (PlayerSettings.WSA.GetTargetDeviceFamily(PlayerSettings.WSATargetFamily.Team))
                 {
                     currentPlatform |= Platform.WindowsSurfaceHub;
                 }
-                else if (PlayerSettings.WSA.GetTargetDeviceFamily(PlayerSettings.WSATargetFamily.IoT))
+
+                if (PlayerSettings.WSA.GetTargetDeviceFamily(PlayerSettings.WSATargetFamily.IoT))
                 {
                     currentPlatform |= Platform.WindowsIoT;
                 }
-                else if (PlayerSettings.WSA.GetTargetDeviceFamily(PlayerSettings.WSATargetFamily.IoTHeadless))
+
+                if (PlayerSettings.WSA.GetTargetDeviceFamily(PlayerSettings.WSATargetFamily.IoTHeadless))
                 {
                     currentPlatform |= Platform.WindowsIoT;
                 }
