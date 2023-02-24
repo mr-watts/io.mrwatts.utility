@@ -29,7 +29,6 @@ namespace MrWatts.CommScope.EnclosureVisualizer
                 if (PlayerSettings.WSA.GetTargetDeviceFamily(PlayerSettings.WSATargetFamily.Mobile))
                 {
                     currentPlatform |= Platform.WindowsPhone;
-                    currentPlatform |= Platform.WindowsTablet;
                 }
 
                 if (PlayerSettings.WSA.GetTargetDeviceFamily(PlayerSettings.WSATargetFamily.Xbox))
@@ -63,7 +62,7 @@ namespace MrWatts.CommScope.EnclosureVisualizer
                 currentPlatform |= AnalyticsInfo.VersionInfo.DeviceFamily switch
                 {
                     "Windows.Mobile" => Platform.WindowsPhone,
-                    "Windows.Desktop" => UIViewSettings.GetForCurrentView().UserInteractionMode == UserInteractionMode.Mouse ? Platform.WindowsDesktop : Platform.WindowsTablet,
+                    "Windows.Desktop" => Platform.WindowsDesktop,
                     "Windows.Universal" => Platform.WindowsIoT,
                     "Windows.Team" => Platform.WindowsSurfaceHub,
                     "Windows.Xbox" => Platform.WindowsXbox,
