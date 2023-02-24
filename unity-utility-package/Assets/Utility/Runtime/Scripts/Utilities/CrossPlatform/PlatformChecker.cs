@@ -62,13 +62,13 @@ namespace MrWatts.CommScope.EnclosureVisualizer
 #if ENABLE_WINMD_SUPPORT
                 currentPlatform |= AnalyticsInfo.VersionInfo.DeviceFamily switch
                 {
-                    "Windows.Mobile" => Platform.WindowsPhone;
-                    "Windows.Desktop" => UIViewSettings.GetForCurrentView().UserInteractionMode == UserInteractionMode.Mouse ? Platform.WindowsDesktop : Platform.WindowsTablet;
-                    "Windows.Universal" => Platform.WindowsIoT;
-                    "Windows.Team" => Platform.WindowsSurfaceHub;
-                    "Windows.Xbox" => Platform.WindowsXbox;
-                    "Windows.Holographic" => Platform.HoloLens2;
-                    _ => Platform.Unknown;
+                    "Windows.Mobile" => Platform.WindowsPhone,
+                    "Windows.Desktop" => UIViewSettings.GetForCurrentView().UserInteractionMode == UserInteractionMode.Mouse ? Platform.WindowsDesktop : Platform.WindowsTablet,
+                    "Windows.Universal" => Platform.WindowsIoT,
+                    "Windows.Team" => Platform.WindowsSurfaceHub,
+                    "Windows.Xbox" => Platform.WindowsXbox,
+                    "Windows.Holographic" => Platform.HoloLens2,
+                    _ => Platform.Unknown,
                 };
 #endif
 
