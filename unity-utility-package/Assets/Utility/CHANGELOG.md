@@ -1,3 +1,7 @@
+# 2023-02-24 | 0.2.0
+ - Added PlatformChecker
+ - Sorted scripts in nicely named folders
+
 # 2023-01-25 | 0.1.1
  - Fixed some GUIDS being the same as in Onion, causing conflicts when both packages are used at the same time.
 
