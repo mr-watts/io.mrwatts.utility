@@ -1,3 +1,6 @@
+# 2023-03-03 | 0.2.1
+ - Extended PlatformChecker
+
 # 2023-02-24 | 0.2.0
  - Added PlatformChecker
  - Sorted scripts in nicely named folders
