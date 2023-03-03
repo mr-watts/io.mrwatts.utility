@@ -24,6 +24,7 @@ namespace MrWatts.CommScope.EnclosureVisualizer
                 if (PlayerSettings.WSA.GetTargetDeviceFamily(PlayerSettings.WSATargetFamily.Desktop))
                 {
                     currentPlatform |= Platform.WindowsDesktop;
+                    currentPlatform |= Platform.Desktop;
                 }
 
                 if (PlayerSettings.WSA.GetTargetDeviceFamily(PlayerSettings.WSATargetFamily.Mobile))
@@ -62,7 +63,7 @@ namespace MrWatts.CommScope.EnclosureVisualizer
                 currentPlatform |= AnalyticsInfo.VersionInfo.DeviceFamily switch
                 {
                     "Windows.Mobile" => Platform.WindowsPhone,
-                    "Windows.Desktop" => Platform.WindowsDesktop,
+                    "Windows.Desktop" => Platform.WindowsDesktop | Platform.Desktop,
                     "Windows.Universal" => Platform.WindowsIoT,
                     "Windows.Team" => Platform.WindowsSurfaceHub,
                     "Windows.Xbox" => Platform.WindowsXbox,
@@ -79,6 +80,13 @@ namespace MrWatts.CommScope.EnclosureVisualizer
                 currentPlatform |= Platform.IOS;
 #endif
 
+#if UNITY_STANDALONE
+                currentPlatform |= Platform.Desktop;
+
+#if UNITY_STANDALONE_WIN
+                currentPlatform |= Platform.WindowsDesktop;
+#endif
+#endif
                 return currentPlatform;
             }
         }
