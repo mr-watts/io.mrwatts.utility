@@ -7,7 +7,7 @@ using Windows.System.Profile;
 using UnityEditor;
 #endif
 
-namespace MrWatts.CommScope.EnclosureVisualizer
+namespace MrWatts.Internal.Utilities
 {
     public static class PlatformChecker
     {

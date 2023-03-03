@@ -1,7 +1,7 @@
 using System;
 
 #pragma warning disable RCS1135
-namespace MrWatts.CommScope.EnclosureVisualizer
+namespace MrWatts.Internal.Utilities
 {
     [Flags]
     public enum Platform
