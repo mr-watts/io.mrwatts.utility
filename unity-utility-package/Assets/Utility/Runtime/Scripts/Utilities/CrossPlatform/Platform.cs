@@ -15,6 +15,7 @@ namespace MrWatts.CommScope.EnclosureVisualizer
         WindowsDesktop = 1 << 5,
         WindowsIoT = 1 << 6,
         WindowsXbox = 1 << 7,
-        WindowsSurfaceHub = 1 << 8
+        WindowsSurfaceHub = 1 << 8,
+        Desktop = 1 << 9,
     }
 }
