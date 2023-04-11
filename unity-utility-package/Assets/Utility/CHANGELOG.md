@@ -1,3 +1,9 @@
+# 2023-04-11 | 0.3.1
+ - Forgot to update Package version and didn't want to delete existing tag
+
+# 2023-03-21 | 0.3.0
+ - Added FlexibleGridLayoutGroup
+
 # 2023-03-03 | 0.2.2
  - Fix incorrect namespaces for new platform checking code
 
