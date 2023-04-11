@@ -1,3 +1,6 @@
+# 2023-04-11 | 0.3.2
+ - Fixed missing meta files
+
 # 2023-04-11 | 0.3.1
  - Forgot to update Package version and didn't want to delete existing tag
 
