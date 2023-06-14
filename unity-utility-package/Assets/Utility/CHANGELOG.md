@@ -1,4 +1,7 @@
-# 2023-04-11 | 0.3.2
+# 2023-06-14 | 0.4.0
+ - Add `IEnumerable` `ForEach`, `ForEachAsync`, and `SelectAsync`
+
+ # 2023-04-11 | 0.3.2
  - Fixed missing meta files
 
 # 2023-04-11 | 0.3.1
