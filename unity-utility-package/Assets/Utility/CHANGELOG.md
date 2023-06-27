@@ -1,3 +1,6 @@
+# 2023-06-27 | 0.4.1
+ - Corrected access modifier of `SelectAsync` method to be public
+
 # 2023-06-14 | 0.4.0
  - Add `IEnumerable` `ForEach`, `ForEachAsync`, and `SelectAsync`
 
