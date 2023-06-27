@@ -23,12 +23,12 @@ namespace MrWatts.Internal.Utilities
             }
         }
 
-        internal static Task<IEnumerable<TResult>> SelectAsync<TSource, TResult>(this IEnumerable<TSource> source, Func<TSource, Task<TResult>> selector)
+        public static Task<IEnumerable<TResult>> SelectAsync<TSource, TResult>(this IEnumerable<TSource> source, Func<TSource, Task<TResult>> selector)
         {
             return source.SelectAsync((x, _) => selector(x));
         }
 
-        internal static async Task<IEnumerable<TResult>> SelectAsync<TSource, TResult>(this IEnumerable<TSource> source, Func<TSource, int, Task<TResult>> selector)
+        public static async Task<IEnumerable<TResult>> SelectAsync<TSource, TResult>(this IEnumerable<TSource> source, Func<TSource, int, Task<TResult>> selector)
         {
             int i = 0;
             ConcurrentBag<TResult> resultList = new();
