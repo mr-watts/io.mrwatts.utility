@@ -42,5 +42,22 @@ namespace MrWatts.Internal.Utilities
                 }
             };
         }
+
+        public EventHandler Create(Func<object, EventArgs, Task> method)
+        {
+#pragma warning disable EPC17
+            return async (object sender, EventArgs args) =>
+#pragma warning restore EPC17
+            {
+                try
+                {
+                    await method(sender, args);
+                }
+                catch (Exception e)
+                {
+                    logger.Log(e, e.Message);
+                }
+            };
+        }
     }
 }
