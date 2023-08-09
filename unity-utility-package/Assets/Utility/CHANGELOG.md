@@ -1,3 +1,6 @@
+# 2023-08-09 | 0.4.2
+ - Extended AsyncVoidMethodFactory with a generic eventargs application
+
 # 2023-06-27 | 0.4.1
  - Corrected access modifier of `SelectAsync` method to be public
 
