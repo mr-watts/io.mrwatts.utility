@@ -6,6 +6,54 @@ namespace MrWatts.Internal.Utilities
     public sealed class FlexibleGridLayout : GridLayoutGroup
     {
         [SerializeField]
+        private bool _fixedColumnCellSize = false;
+        public bool FixedColumnCellSize
+        {
+            get => _fixedColumnCellSize;
+            set
+            {
+                _fixedColumnCellSize = value;
+                UpdateCellSize();
+            }
+        }
+
+        [SerializeField]
+        private int _columnCellSize = 50;
+        public int ColumnCellSize
+        {
+            get => _columnCellSize;
+            set
+            {
+                _columnCellSize = value;
+                UpdateCellSize();
+            }
+        }
+
+        [SerializeField]
+        private bool _fixedRowCellSize = false;
+        public bool FixedRowCellSize
+        {
+            get => _fixedRowCellSize;
+            set
+            {
+                _fixedRowCellSize = value;
+                UpdateCellSize();
+            }
+        }
+
+        [SerializeField]
+        private int _rowCellSize = 50;
+        public int RowCellSize
+        {
+            get => _rowCellSize;
+            set
+            {
+                _rowCellSize = value;
+                UpdateCellSize();
+            }
+        }
+
+        [SerializeField]
         private int _columnCount = 12;
         public int ColumnCount
         {
@@ -43,8 +91,9 @@ namespace MrWatts.Internal.Utilities
 
         private void UpdateCellSize()
         {
-            float x = (rectTransform.rect.size.x - padding.horizontal - (spacing.x * (ColumnCount - 1))) / ColumnCount;
-            float y = (rectTransform.rect.size.y - padding.vertical - (spacing.y * (RowCount - 1))) / RowCount;
+
+            float x = FixedColumnCellSize ? ColumnCellSize : (rectTransform.rect.size.x - padding.horizontal - (spacing.x * (ColumnCount - 1))) / ColumnCount;
+            float y = FixedRowCellSize ? RowCellSize : (rectTransform.rect.size.y - padding.vertical - (spacing.y * (RowCount - 1))) / RowCount;
 
             if (startAxis == Axis.Horizontal)
             {

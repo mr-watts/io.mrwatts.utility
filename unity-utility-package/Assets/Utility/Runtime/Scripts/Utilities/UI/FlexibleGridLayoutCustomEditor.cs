@@ -14,6 +14,10 @@ namespace MrWatts.Internal.Utilities
         internal SerializedProperty m_ChildAlignment;
         internal SerializedProperty _columnCount;
         internal SerializedProperty _rowCount;
+        internal SerializedProperty _fixedColumnCellSize;
+        internal SerializedProperty _columnCellSize;
+        internal SerializedProperty _fixedRowCellSize;
+        internal SerializedProperty _rowCellSize;
 
         private void OnEnable()
         {
@@ -24,6 +28,10 @@ namespace MrWatts.Internal.Utilities
             m_ChildAlignment = serializedObject.FindProperty("m_ChildAlignment");
             _columnCount = serializedObject.FindProperty("_columnCount");
             _rowCount = serializedObject.FindProperty("_rowCount");
+            _fixedRowCellSize = serializedObject.FindProperty("_fixedRowCellSize");
+            _rowCellSize = serializedObject.FindProperty("_rowCellSize");
+            _fixedColumnCellSize = serializedObject.FindProperty("_fixedolumnCellSize");
+            _columnCellSize = serializedObject.FindProperty("_columnCellSize");
         }
 
         public override void OnInspectorGUI()
@@ -37,6 +45,11 @@ namespace MrWatts.Internal.Utilities
 
             EditorGUILayout.PropertyField(_columnCount, true);
             EditorGUILayout.PropertyField(_rowCount, true);
+
+            EditorGUILayout.PropertyField(_fixedRowCellSize, true);
+            EditorGUILayout.PropertyField(_rowCellSize, true);
+            EditorGUILayout.PropertyField(_fixedColumnCellSize, true);
+            EditorGUILayout.PropertyField(_columnCellSize, true);
 
             serializedObject.ApplyModifiedProperties();
         }
