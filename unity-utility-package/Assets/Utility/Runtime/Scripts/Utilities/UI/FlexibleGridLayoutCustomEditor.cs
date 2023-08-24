@@ -28,9 +28,10 @@ namespace MrWatts.Internal.Utilities
             m_ChildAlignment = serializedObject.FindProperty("m_ChildAlignment");
             _columnCount = serializedObject.FindProperty("_columnCount");
             _rowCount = serializedObject.FindProperty("_rowCount");
+
             _fixedRowCellSize = serializedObject.FindProperty("_fixedRowCellSize");
             _rowCellSize = serializedObject.FindProperty("_rowCellSize");
-            _fixedColumnCellSize = serializedObject.FindProperty("_fixedolumnCellSize");
+            _fixedColumnCellSize = serializedObject.FindProperty("_fixedColumnCellSize");
             _columnCellSize = serializedObject.FindProperty("_columnCellSize");
         }
 
