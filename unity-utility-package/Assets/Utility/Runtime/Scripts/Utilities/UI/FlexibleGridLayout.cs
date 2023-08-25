@@ -91,7 +91,6 @@ namespace MrWatts.Internal.Utilities
 
         private void UpdateCellSize()
         {
-
             float x = FixedColumnCellSize ? ColumnCellSize : (rectTransform.rect.size.x - padding.horizontal - (spacing.x * (ColumnCount - 1))) / ColumnCount;
             float y = FixedRowCellSize ? RowCellSize : (rectTransform.rect.size.y - padding.vertical - (spacing.y * (RowCount - 1))) / RowCount;
 
