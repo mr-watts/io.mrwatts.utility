@@ -1,3 +1,6 @@
+# 2023-08-25 | 0.4.3
+ - Flexible grid layout now has the options the give the cells a fixed size.
+
 # 2023-08-09 | 0.4.2
  - Extended AsyncVoidMethodFactory with a generic eventargs application
 
