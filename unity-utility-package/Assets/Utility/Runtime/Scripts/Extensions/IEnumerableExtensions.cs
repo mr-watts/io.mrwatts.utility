@@ -31,11 +31,11 @@ namespace MrWatts.Internal.Utilities
         public static async Task<IEnumerable<TResult>> SelectAsync<TSource, TResult>(this IEnumerable<TSource> source, Func<TSource, int, Task<TResult>> selector)
         {
             int i = 0;
-            ConcurrentBag<TResult> resultList = new();
+            ConcurrentQueue<TResult> resultList = new();
 
             foreach (TSource item in source)
             {
-                resultList.Add(await selector(item, i++));
+                resultList.Enqueue(await selector(item, i++));
             }
 
             return resultList;
