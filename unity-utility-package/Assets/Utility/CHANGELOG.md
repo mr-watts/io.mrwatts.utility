@@ -1,4 +1,9 @@
-# 2023-08-25 | 0.4.3
+# 2024-06-24 | 0.5.0
+ - Add proper license file.
+ - Fix SelectAsync having non-deterministic or incorrect sorting.
+ - Add data state keeper classes to maintain and share global application state through service container.
+
+ # 2023-08-25 | 0.4.3
  - Flexible grid layout now has the options the give the cells a fixed size.
 
 # 2023-08-09 | 0.4.2
