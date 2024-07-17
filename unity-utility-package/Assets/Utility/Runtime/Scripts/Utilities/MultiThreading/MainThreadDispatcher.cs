@@ -98,7 +98,7 @@ namespace MrWatts.Internal.Utilities
 
         /// <summary>
         /// Enqueues the specified action to be run on the main thread asynchronously. This call will not block until
-        /// the action is completed, so you will not be able to catch exceptions (use <see cref="EnqueueAsync"/>
+        /// the action is completed, so you will not be able to catch exceptions (use <see cref="RunAsync"/>
         /// instead if that's what you want or if you want to wait for the acction to be executed).
         /// </summary>
         /// <param name="action"></param>
