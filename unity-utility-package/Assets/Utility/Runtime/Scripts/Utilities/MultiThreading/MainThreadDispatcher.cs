@@ -38,24 +38,13 @@ namespace MrWatts.Internal.Utilities
         }
 
         /// <summary>
-        /// Enqueues the specified action to be run on the main thread asynchronously. This call will not block until
-        /// the action is completed, so you will not be able to catch exceptions (use <see cref="EnqueueAsync"/>
-        /// instead if that's what you want).
+        /// Runs the specified action on the main thread asynchronously.
         /// </summary>
         /// <param name="action"></param>
-        public void Enqueue(Action action)
+        /// <returns>A task that completes once the action is completed (or has faulted or was cancelled) on the main thread.</returns>
+        public Task RunAsync(Action action)
         {
-            _ = EnqueueAsync(action);
-        }
-
-        /// <summary>
-        /// Enqueues the specified action to be run on the main thread asynchronously. The returned task will complete
-        /// once the action is completed (or has faulted or was cancelled) on the main thread.
-        /// </summary>
-        /// <param name="action"></param>
-        public Task EnqueueAsync(Action action)
-        {
-            return EnqueueAsync(() =>
+            return RunAsync(() =>
             {
                 action();
                 return Task.CompletedTask;
@@ -63,13 +52,13 @@ namespace MrWatts.Internal.Utilities
         }
 
         /// <summary>
-        /// Enqueues the specified asynchronous action to be run on the main thread asynchronously. The returned task
-        /// will complete once the action is completed (or has faulted or was cancelled) on the main thread.
+        /// Runs the specified asynchronous action on the main thread asynchronously.
         /// </summary>
         /// <param name="taskFactory"></param>
-        public Task EnqueueAsync(Func<Task> taskFactory)
+        /// <returns>A task that completes once the action is completed (or has faulted or was cancelled) on the main thread.</returns>
+        public Task RunAsync(Func<Task> taskFactory)
         {
-            return EnqueueAsync(async () =>
+            return RunAsync(async () =>
             {
                 await taskFactory();
                 return true;
@@ -77,13 +66,13 @@ namespace MrWatts.Internal.Utilities
         }
 
         /// <summary>
-        /// Enqueues the specified asynchronous function to be run on the main thread asynchronously. The returned task
-        /// will complete once the action is completed (or has faulted or was cancelled) on the main thread, with the
-        /// result of the function.
+        /// Runs the specified asynchronous function on the main thread asynchronously.
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="taskFactory"></param>
-        public Task<T> EnqueueAsync<T>(Func<Task<T>> taskFactory)
+        /// <returns>A task that completes with the result of the function once the action is completed (or has faulted
+        /// or was cancelled) on the main thread.</returns>
+        public Task<T> RunAsync<T>(Func<Task<T>> taskFactory)
         {
             var taskCompletionSource = new TaskCompletionSource<T>();
 
@@ -105,6 +94,17 @@ namespace MrWatts.Internal.Utilities
             });
 
             return taskCompletionSource.Task;
+        }
+
+        /// <summary>
+        /// Enqueues the specified action to be run on the main thread asynchronously. This call will not block until
+        /// the action is completed, so you will not be able to catch exceptions (use <see cref="RunAsync"/>
+        /// instead if that's what you want or if you want to wait for the acction to be executed).
+        /// </summary>
+        /// <param name="action"></param>
+        public void Enqueue(Action action)
+        {
+            _ = RunAsync(action);
         }
     }
 }
