@@ -1,6 +1,7 @@
 # ????-??-?? | Unreleased
  - `DataStateKeeper` and friends no longer force nullability.
  - `DataStateKeeper` now has a constructor to allow setting the initial value.
+ - Refactored method names in `MainThreadDispatcher` to reduce confusion.
 
 # 2024-06-24 | 0.5.0
  - Add proper license file.
