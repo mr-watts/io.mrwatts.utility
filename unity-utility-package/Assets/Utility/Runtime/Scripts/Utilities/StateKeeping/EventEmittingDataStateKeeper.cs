@@ -4,7 +4,7 @@ namespace MrWatts.Internal.Utilities
 {
     public sealed class EventEmittingDataStateKeeper<T> : IDataStateKeeper<T>
     {
-        public T? State
+        public T State
         {
             get
             {
@@ -12,7 +12,7 @@ namespace MrWatts.Internal.Utilities
             }
             set
             {
-                T? oldValue = delegatee.State;
+                T oldValue = delegatee.State;
                 delegatee.State = value;
                 OnValueChanged?.Invoke(this, new DataStateKeeperValueChangedEventArgs<T>(oldValue, value));
             }
