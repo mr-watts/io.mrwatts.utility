@@ -1,5 +1,9 @@
 using System;
 using System.Threading.Tasks;
+using UnityEngine.Events;
+
+// Don't complain about async void since this class is all about wrapping it.
+#pragma warning disable EPC17
 
 namespace MrWatts.Internal.Utilities
 {
@@ -26,9 +30,9 @@ namespace MrWatts.Internal.Utilities
             this.logger = logger;
         }
 
+#region Event Handlers
         public EventHandler<TEventArgs> Create<TEventArgs>(Func<object, TEventArgs, Task> method)
         {
-#pragma warning disable EPC17
             return async (object sender, TEventArgs args) =>
 #pragma warning restore EPC17
             {
@@ -45,9 +49,7 @@ namespace MrWatts.Internal.Utilities
 
         public EventHandler Create(Func<object, EventArgs, Task> method)
         {
-#pragma warning disable EPC17
             return async (object sender, EventArgs args) =>
-#pragma warning restore EPC17
             {
                 try
                 {
@@ -59,5 +61,130 @@ namespace MrWatts.Internal.Utilities
                 }
             };
         }
+#endregion Event Handlers
+
+#region Actions
+        public Action<T1> CreateAction<T1>(Func<T1, Task> method)
+        {
+            return async (T1 args) =>
+            {
+                try
+                {
+                    await method(args);
+                }
+                catch (Exception e)
+                {
+                    logger.Log(e, e.Message);
+                }
+            };
+        }
+
+        public Action<T1, T2> CreateAction<T1, T2>(Func<T1, T2, Task> method)
+        {
+            return async (T1 args1, T2 args2) =>
+            {
+                try
+                {
+                    await method(args1, args2);
+                }
+                catch (Exception e)
+                {
+                    logger.Log(e, e.Message);
+                }
+            };
+        }
+
+        public Action<T1, T2, T3> CreateAction<T1, T2, T3>(Func<T1, T2, T3, Task> method)
+        {
+            return async (T1 args1, T2 args2, T3 args3) =>
+            {
+                try
+                {
+                    await method(args1, args2, args3);
+                }
+                catch (Exception e)
+                {
+                    logger.Log(e, e.Message);
+                }
+            };
+        }
+
+        public Action<T1, T2, T3, T4> CreateAction<T1, T2, T3, T4>(Func<T1, T2, T3, T4, Task> method)
+        {
+            return async (T1 args1, T2 args2, T3 args3, T4 args4) =>
+            {
+                try
+                {
+                    await method(args1, args2, args3, args4);
+                }
+                catch (Exception e)
+                {
+                    logger.Log(e, e.Message);
+                }
+            };
+        }
+#endregion Actions
+
+#region Unity Actions
+        public UnityAction<T1> CreateUnityAction<T1>(Func<T1, Task> method)
+        {
+            return async (T1 args) =>
+            {
+                try
+                {
+                    await method(args);
+                }
+                catch (Exception e)
+                {
+                    logger.Log(e, e.Message);
+                }
+            };
+        }
+
+        public UnityAction<T1, T2> CreateUnityAction<T1, T2>(Func<T1, T2, Task> method)
+        {
+            return async (T1 args1, T2 args2) =>
+            {
+                try
+                {
+                    await method(args1, args2);
+                }
+                catch (Exception e)
+                {
+                    logger.Log(e, e.Message);
+                }
+            };
+        }
+
+        public UnityAction<T1, T2, T3> CreateUnityAction<T1, T2, T3>(Func<T1, T2, T3, Task> method)
+        {
+            return async (T1 args1, T2 args2, T3 args3) =>
+            {
+                try
+                {
+                    await method(args1, args2, args3);
+                }
+                catch (Exception e)
+                {
+                    logger.Log(e, e.Message);
+                }
+            };
+        }
+
+        public UnityAction<T1, T2, T3, T4> CreateUnityAction<T1, T2, T3, T4>(Func<T1, T2, T3, T4, Task> method)
+        {
+            return async (T1 args1, T2 args2, T3 args3, T4 args4) =>
+            {
+                try
+                {
+                    await method(args1, args2, args3, args4);
+                }
+                catch (Exception e)
+                {
+                    logger.Log(e, e.Message);
+                }
+            };
+        }
+#endregion Unity Actions
     }
 }
