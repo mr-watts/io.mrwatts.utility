@@ -1,3 +1,8 @@
+# 2024-11-17 | 2.0.0
+ - Add `QueuedTaskRunner` to run tasks sequentially.
+ - Drop `WorkQueueHandler` since it was replaced by the `MainThreadDispatcher`.
+ - `AsyncVoidMethodFactory` can now also wrap `UnityAction` and `System.Action`.
+
 # 2024-07-17 | 1.0.0
  - `DataStateKeeper` and friends no longer force nullability.
  - `DataStateKeeper` now has a constructor to allow setting the initial value.
