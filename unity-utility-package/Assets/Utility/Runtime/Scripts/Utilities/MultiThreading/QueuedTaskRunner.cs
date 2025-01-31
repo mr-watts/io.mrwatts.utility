@@ -16,6 +16,15 @@ namespace MrWatts.Internal.Utilities
         /// Runs the task returned by the factory once all previously queued tasks have finished executing.
         /// </summary>
         /// <returns>A task that resolves or fails (only) when the task returned by the factory does so.</returns>
+        public Task<T> RunAsync<T>(Func<ValueTask<T>> taskFactory)
+        {
+            return RunAsync(() => taskFactory().AsTask());
+        }
+
+        /// <summary>
+        /// Runs the task returned by the factory once all previously queued tasks have finished executing.
+        /// </summary>
+        /// <returns>A task that resolves or fails (only) when the task returned by the factory does so.</returns>
         public async Task<T> RunAsync<T>(Func<Task<T>> taskFactory)
         {
             Task[] tasksToWaitFor = tasks.ToArray();
@@ -60,13 +69,30 @@ namespace MrWatts.Internal.Utilities
         /// Runs the task returned by the factory once all previously queued tasks have finished executing.
         /// </summary>
         /// <returns>A task that resolves or fails (only) when the task returned by the factory does so.</returns>
-        public async Task RunAsync(Func<Task> taskFactory)
+        public async Task RunAsync(Func<ValueTask> taskFactory)
         {
-            await RunAsync(async () =>
+            Func<ValueTask<bool>> adaptedTaskFactory = async () =>
             {
                 await taskFactory();
                 return true;
-            });
+            };
+
+            await RunAsync(adaptedTaskFactory);
+        }
+
+        /// <summary>
+        /// Runs the task returned by the factory once all previously queued tasks have finished executing.
+        /// </summary>
+        /// <returns>A task that resolves or fails (only) when the task returned by the factory does so.</returns>
+        public async Task RunAsync(Func<Task> taskFactory)
+        {
+            Func<Task<bool>> adaptedTaskFactory = async () =>
+            {
+                await taskFactory();
+                return true;
+            };
+
+            await RunAsync(adaptedTaskFactory);
         }
     }
 }
