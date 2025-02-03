@@ -1,3 +1,6 @@
+## ????-??-?? | ?.?.?
+ - Support `ValueTask`s in `QueuedTaskRunner`.
+
 # 2024-11-17 | 2.0.0
  - Add `QueuedTaskRunner` to run tasks sequentially.
  - Drop `WorkQueueHandler` since it was replaced by the `MainThreadDispatcher`.
