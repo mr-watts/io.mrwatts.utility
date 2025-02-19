@@ -1,4 +1,7 @@
-## ????-??-?? | ?.?.?
+# 2025-02-19 | 2.0.1
+ - Removed items that were split up to dedicated packages:
+   - `io.mrwatts.statekeepers`
+   - `io.mrwatts.extensions`
  - Support `ValueTask`s in `QueuedTaskRunner`.
 
 # 2024-11-17 | 2.0.0
