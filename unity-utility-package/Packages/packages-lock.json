@@ -60,13 +60,6 @@
         "com.unity.modules.imgui": "1.0.0"
       }
     },
-    "io.mrwatts.codeanalysisrulesets": {
-      "version": "2.2.9",
-      "depth": 0,
-      "source": "registry",
-      "dependencies": {},
-      "url": "https://gitlab.com/api/v4/projects/27157125/packages/npm"
-    },
     "io.mrwatts.fuelinject": {
       "version": "2.0.0",
       "depth": 0,
