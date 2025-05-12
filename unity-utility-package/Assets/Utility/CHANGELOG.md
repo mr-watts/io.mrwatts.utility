@@ -1,4 +1,7 @@
-# 2025-02-19 | 2.0.1
+# 2025-05-12 | 3.0.0
+ - Update to Fuel Inject 2.0.
+
+ # 2025-02-19 | 2.0.1
  - Removed items that were split up to dedicated packages:
    - `io.mrwatts.statekeepers`
    - `io.mrwatts.extensions`
