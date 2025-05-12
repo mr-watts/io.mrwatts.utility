@@ -72,6 +72,7 @@ unity-utility-package/Assets/Packages/NuGet
 */Assets/Packages/Microsoft.MixedReality.Toolkit.Examples.2.3.0/
 
 # Include this since we use it to configure our static code analysis tools
+!NuGetDependencies/Unity/NuGetDependencies.csproj
 !mrwatts.utility.editor.csproj.user
 !mrwatts.utility.runtime.csproj.user
 
