@@ -1,0 +1,20 @@
+﻿<!--
+    This file globally overrules settings from .csproj files.
+
+    See also: https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/configure-language-version#configure-multiple-projects
+-->
+<Project>
+    <!--
+        This trick pulls in Roslyn analyzers, its configuration, and other configuration we apply such as nullability
+        checks to the C# project just for IDEs/OmniSharp, without making Unity do so.
+
+        Because the nuget.config in this folder does not specify an installation path, these analyzers and their
+        dependencies are installed separately in your global NuGet cache folder and are independent of what is used
+        by Unity.
+
+        (We can't use NuGetDependencies/Unity/NuGetDependencies.csproj directly because this project will then restore
+        that project, which will look at the nuget.config next to it, and overwrite packages inside the Unity package
+        folder in Assets/Packages/Unity.)
+    -->
+    <Import Project="../NuGetDependencies/RoslynAnalyzerDependencies.targets" />
+</Project>

@@ -64,12 +64,16 @@ crashlytics-build.properties
 */Assets/Plugins/Github.meta
 */Assets/Plugins/Github/
 
+# Exclude packages which are automatically installed.
+.editorconfig
+unity-utility-package/Assets/Packages/NuGet
+
 # Excluded the Microsoft.MixedReality.Toolkit.Examples.2.3.0 package
 */Assets/Packages/Microsoft.MixedReality.Toolkit.Examples.2.3.0/
 
 # Include this since we use it to configure our static code analysis tools
-!mrwatts.onion.editor.csproj.user
-!mrwatts.onion.runtime.csproj.user
+!mrwatts.utility.editor.csproj.user
+!mrwatts.utility.runtime.csproj.user
 
 # Ignore Roslyn analyzers in the scripts folder, as they are installed through install-roslyn-analyzers.sh.
 */Assets/Scripts/RoslynAnalyzers
