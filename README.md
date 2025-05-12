@@ -1,1 +1,1 @@
-See [the package README](Assets/Utility/README.md).
+See [the package README](unity-utility-package/Assets/Utility/README.md).

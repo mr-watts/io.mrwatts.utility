@@ -1,0 +1,16 @@
+<Project>
+    <PropertyGroup>
+        <!--
+            Move the 'bin' and 'obj' folders used by .NET to a dedicated, single folder. This reduces the visual noise
+            of these folders appearing everywhere, but more importantly keeps them out of Library/PackageCache folder
+            if Unity packages ship .csproj project files that are included. The latter folder is supposed to be
+            immutable to Unity so whilst it doesn't break anything, having these folders be created in the PackageCache
+            subfolders will make Unity complain that there shouldn't be any files it doesn't recognize.
+
+            This affects both a command-line 'dotnet restore' as well as restores done by some IDEs such as the VSCode
+            C# plugins.
+        -->
+        <BaseOutputPath>$(SolutionDir)/Temp/NuGetDependencies/bin/$(MSBuildProjectName)/</BaseOutputPath>
+        <BaseIntermediateOutputPath>$(SolutionDir)/Temp/NuGetDependencies/obj/$(MSBuildProjectName)/</BaseIntermediateOutputPath>
+    </PropertyGroup>
+</Project>
