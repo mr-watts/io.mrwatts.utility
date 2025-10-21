@@ -64,6 +64,21 @@ namespace MrWatts.Internal.Utilities
 #endregion Event Handlers
 
 #region Actions
+        public Action CreateAction(Func<Task> method)
+        {
+            return async () =>
+            {
+                try
+                {
+                    await method();
+                }
+                catch (Exception e)
+                {
+                    logger.Log(e, e.Message);
+                }
+            };
+        }
+
         public Action<T1> CreateAction<T1>(Func<T1, Task> method)
         {
             return async (T1 args) =>
@@ -126,6 +141,21 @@ namespace MrWatts.Internal.Utilities
 #endregion Actions
 
 #region Unity Actions
+        public UnityAction CreateUnityAction(Func<Task> method)
+        {
+            return async () =>
+            {
+                try
+                {
+                    await method();
+                }
+                catch (Exception e)
+                {
+                    logger.Log(e, e.Message);
+                }
+            };
+        }
+
         public UnityAction<T1> CreateUnityAction<T1>(Func<T1, Task> method)
         {
             return async (T1 args) =>
